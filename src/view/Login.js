@@ -9,6 +9,13 @@ function Login(props) {
 	const [data, setData] = useRecoilState(authLogin);
 	console.log("data login : ", data);
 
+	const onClickBtn = (e) => {
+		setData({
+			email,
+			password,
+		});
+	};
+
 	return (
 		<div>
 			<div className="container">
@@ -21,7 +28,7 @@ function Login(props) {
 						<input className="col-lg-8" type="password" onChange={(e) => setPassword(e.target.value)} placeholder="Password" name="password" />
 					</div>
 					<div className="col-lg-8 py-2">
-						<button onClick={() => setData({ email: email, password: password })} className="btn btn-primary col-lg-8">
+						<button onClick={() => onClickBtn()} className="btn btn-primary col-lg-8">
 							Login
 						</button>
 					</div>

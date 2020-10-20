@@ -32,18 +32,21 @@ function Navbar(props) {
 					</button>
 					<div className="collapse navbar-collapse" id="navbarNavAltMarkup">
 						<div className="navbar-nav">
-							<Link to="/login" className="nav-item nav-link" href="#">
+							<Link to="/login" className="nav-item nav-link">
 								Login
 							</Link>
-							<Link to="/button" className="nav-item nav-link" href="#">
+							<Link to="/upload-file" className="nav-item nav-link">
+								Upload File
+							</Link>
+							<Link to="/button" className="nav-item nav-link">
 								Button Plus
 							</Link>
-							<Link className="nav-item nav-link" href="#">
+							<a href="#" className="nav-item nav-link">
 								{user.name}
-							</Link>
-							<Link className="nav-item nav-link" href="#">
+							</a>
+							<a href="#" className="nav-item nav-link">
 								Basket {basket}
-							</Link>
+							</a>
 						</div>
 					</div>
 				</div>
