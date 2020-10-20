@@ -41,12 +41,12 @@ function Navbar(props) {
 							<Link to="/button" className="nav-item nav-link">
 								Button Plus
 							</Link>
-							<a href="#" className="nav-item nav-link">
+							<Link to="/" className="nav-item nav-link">
 								{user.name}
-							</a>
-							<a href="#" className="nav-item nav-link">
+							</Link>
+							<Link to="/" className="nav-item nav-link">
 								Basket {basket}
-							</a>
+							</Link>
 						</div>
 					</div>
 				</div>

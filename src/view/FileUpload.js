@@ -6,6 +6,7 @@ function FileUpload(props) {
 	console.log("isi state foto : ", foto);
 
 	const onClikbtnUpload = (e) => {
+		// e.preventDefault();
 		const formData = new FormData();
 		formData.append("myImage", foto);
 		const config = {
@@ -13,7 +14,8 @@ function FileUpload(props) {
 				"content-type": "multipart/form-data",
 			},
 		};
-		Axios.post("/upload", formData, config)
+		console.log("formData : ", formData);
+		Axios.post("http://localhost:6600/admin/kelas/create", formData, config)
 			.then((response) => {
 				alert("The file is successfully uploaded");
 			})
@@ -29,7 +31,7 @@ function FileUpload(props) {
 						<input className="form-control" type="file" onChange={(e) => setFoto(e.target.files[0])} placeholder="Username" name="name" />
 					</div>
 					<div className="col-md-8 py-2">
-						<button onClick={() => onClikbtnUpload()} className=" form-control btn btn-primary col-md-8">
+						<button onClick={(e) => onClikbtnUpload(e)} className=" form-control btn btn-primary col-md-8">
 							Upload
 						</button>
 					</div>
