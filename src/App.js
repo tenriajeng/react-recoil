@@ -1,26 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Suspense } from "react";
+import { BrowserRouter, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import ButtonPlus from "./view/ButtonPlus";
+import Login from "./view/Login";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<div>
+			<BrowserRouter>
+				<Suspense fallback={<h1>loading</h1>}>
+					<Route exact path="/">
+						<Navbar />
+					</Route>
+					<Route path="/login">
+						<Navbar />
+						<Login />
+					</Route>
+					<Route path="/button">
+						<Navbar />
+						<ButtonPlus />
+					</Route>
+				</Suspense>
+			</BrowserRouter>
+		</div>
+	);
 }
 
 export default App;
