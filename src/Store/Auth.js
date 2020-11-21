@@ -12,18 +12,21 @@ const authUser = selector({
 	get: async ({ get }) => {
 		let user = null;
 		const sendValue = get(authLogin);
-		console.log("sending value : ", sendValue);
-		try {
-			let { data } = await Axios.post("http://localhost:6600/login", sendValue);
-			user = { user: data.response[0] };
-			console.log("ini data ku : ", user.user);
-			if (user.user === undefined) {
-				user = { user: "sign" };
+		if (sendValue !== null) {
+			console.log("sending value : ", sendValue);
+			try {
+				let { data } = await Axios.post("http://localhost:6600/login", sendValue);
+				user = { user: data.response[0] };
+				console.log("ini data ku : ", user.user);
+				if (user.user === undefined) {
+					user = { user: "sign" };
+				}
+			} catch (error) {
+				user = { user: error.status };
 			}
-		} catch (error) {
-			user = { user: error.status };
+			return user;
 		}
-		return user;
+		return (user = { user: { name: "login dulu" } });
 	},
 });
 

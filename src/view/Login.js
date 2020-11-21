@@ -16,9 +16,11 @@ function Login(props) {
 		});
 	};
 
+	const styleRow = { marginTop: 55 };
+
 	return (
-		<div>
-			<div className="container">
+		<div className="container" style={styleRow}>
+			<div className="jumbotron">
 				<h1>ini login</h1>
 				<div className="row col-lg-8">
 					<div className="col-lg-8">

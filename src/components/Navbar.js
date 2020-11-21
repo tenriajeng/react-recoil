@@ -14,7 +14,7 @@ function Navbar(props) {
 
 	return (
 		<div>
-			<nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+			<nav className="navbar navbar-expand-md navbar-dark fixed-top bg-dark py-3">
 				<div className="container-fluid">
 					<Link className="navbar-brand" to="/">
 						Navbar
@@ -40,6 +40,9 @@ function Navbar(props) {
 							</Link>
 							<Link to="/button" className="nav-item nav-link">
 								Button Plus
+							</Link>
+							<Link to="/wysiwyg" className="nav-item nav-link">
+								Wysiwyg
 							</Link>
 							<Link to="/" className="nav-item nav-link">
 								{user.name}
